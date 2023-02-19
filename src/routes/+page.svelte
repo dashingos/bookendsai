@@ -1,4 +1,4 @@
-<div class="max-w-2xl m-auto mt-32">
+<div class="max-w-2xl m-auto mt-32 px-2">
 	<h1 class="font-display text-5xl font-extrabold text-slate-900 md:text-6xl text-center">
 		◫ Bookends AI
 	</h1>
