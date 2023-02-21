@@ -18,7 +18,11 @@
 	let volumeInfo;
 
 	function update_result(letter) {
-		result += letter;
+		if (result == undefined) {
+			result = letter;
+		} else {
+			result += letter;
+		}
 	}
 
 	onMount(async () => {
