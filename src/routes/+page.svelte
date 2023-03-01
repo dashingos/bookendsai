@@ -45,7 +45,7 @@
 					books = [];
 				}
 			}}
-			class="inline-flex justify-center rounded-2xl bg-blue-600 py-4 px-6 text-base font-semibold text-white hover:bg-blue-500 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:text-white/70 "
+			class="group button transition-all inline-flex justify-center rounded-2xl bg-blue-600 py-4 px-6 text-base font-semibold text-white hover:bg-blue-500 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:text-white/70 "
 			type="submit"
 			><span class="sr-only sm:not-sr-only">Search</span><span class="sm:hidden"
 				><svg

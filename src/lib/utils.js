@@ -93,7 +93,6 @@ async function callOpenAI() {
 			if (done) break;
 			const data = decoder.decode(value);
 			result.push(data);
-			console.log(result);
 		}
 	} catch (error) {
 		console.log('Error:', error);
