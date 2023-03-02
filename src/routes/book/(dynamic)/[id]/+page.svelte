@@ -68,22 +68,26 @@
 				{/if}
 				<p class="text-sm text-slate-500">By {volumeInfo.authors[0]}</p>
 
-				{#if links[title]}
+				{#if links[id]}
 					<p class="my-2">
-						<a
-							href={links[title].aff}
-							target="_blank"
-							rel="noreferrer"
-							class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 mr-2 inline-block"
-							>Buy Book</a
-						>
-						<a
-							href={links[title].audible}
-							target="_blank"
-							rel="noreferrer"
-							class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 inline-block"
-							>Buy Audiobook</a
-						>
+						{#if links[id].aff}
+							<a
+								href={links[id].aff}
+								target="_blank"
+								rel="noreferrer"
+								class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 mr-2 inline-block"
+								>Buy Book</a
+							>
+						{/if}
+						{#if links[id].audible}
+							<a
+								href={links[id].audible}
+								target="_blank"
+								rel="noreferrer"
+								class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 inline-block"
+								>Buy Audiobook</a
+							>
+						{/if}
 					</p>
 				{/if}
 			</div>
