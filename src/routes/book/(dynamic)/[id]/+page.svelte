@@ -31,9 +31,12 @@
 	}
 	async function new_question() {
 		answering = true;
+		let query = search;
+		if (!query) query = placeholder[place_i];
 		qa[qa_i] = {};
-		qa[qa_i].q = search;
-		await ask(update_result, title, search);
+		qa[qa_i].q = query;
+
+		await ask(update_result, title, query);
 		qa_i += 1;
 		answering = false;
 	}
