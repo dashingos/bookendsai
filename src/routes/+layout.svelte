@@ -19,7 +19,7 @@
 <div class="scroll-smooth bg-white antialiased">
 	<slot />
 </div>
-<!-- 
+
 <footer class="bg-white lg:pl-36" aria-labelledby="footer-heading">
 	<div class="mx-auto max-w-4xl px-6 py-16 sm:py-24 lg:px-8">
 		<h2 id="footer-heading" class="font-display text-4xl pb-4 font-bold">Book lists</h2>
@@ -118,4 +118,4 @@
 			<a class="px-4 hover:underline" href="/affiliate-disclaimer">Affiliate Disclaimer</a>
 		</p>
 	</div>
-</footer> -->
+</footer>

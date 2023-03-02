@@ -16,8 +16,8 @@ export async function searchBooksByTitle(title, maxResults = 10) {
 }
 
 export async function ask(update_result, book, question) {
-	let res = await fetch('https://bookendsai.com/api/ask', {
-		// let res = await fetch('http://localhost:8787/api/ask', {
+	// let res = await fetch('https://bookendsai.com/api/ask', {
+	let res = await fetch('http://localhost:8787/api/ask', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -43,6 +43,7 @@ export async function ask(update_result, book, question) {
 		buffer = lines.pop();
 
 		for (const line of lines) {
+			console.log(line);
 			if (line.trim() === '') {
 				continue;
 			}
@@ -53,9 +54,9 @@ export async function ask(update_result, book, question) {
 			}
 			const data = JSON.parse(line.substring(5));
 
-			let letter = data.choices[0].text;
+			let letter = data.choices[0].delta.content;
 			if (letter === '\n') letter = '<br>';
-			update_result(letter);
+			if (letter) update_result(letter);
 		}
 	}
 
