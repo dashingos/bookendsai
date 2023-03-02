@@ -54,8 +54,7 @@ export async function ask(update_result, book, question) {
 			const data = JSON.parse(line.substring(5));
 
 			let letter = data.choices[0].delta.content;
-			if (letter === '\n') letter = '<br>';
-			if (letter) update_result(letter);
+			if (letter) update_result(letter.replace(/\n/g, '<br>'));
 		}
 	}
 

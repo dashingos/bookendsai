@@ -21,12 +21,12 @@
 
 	let volumeInfo;
 
-	function update_result(letter) {
+	function update_result(token) {
 		if (qa[qa_i].a == undefined) {
-			if (letter == '<br>') return;
-			qa[qa_i].a = letter;
+			if (token == '<br>' || token == '<br><br>') return;
+			qa[qa_i].a = token;
 		} else {
-			qa[qa_i].a += letter;
+			qa[qa_i].a += token;
 		}
 	}
 	async function new_question() {
