@@ -15,13 +15,13 @@
 		href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
 	/>
 </svelte:head>
+<div class="flex flex-col min-h-screen">
+	<main class="scroll-smooth bg-white antialiased grow">
+		<slot />
+	</main>
 
-<div class="scroll-smooth bg-white antialiased">
-	<slot />
-</div>
-
-<!-- <footer class="bg-white lg:pl-36" aria-labelledby="footer-heading">
-	<div class="mx-auto max-w-4xl px-6 py-16 sm:py-24 lg:px-8">
+	<footer class="bg-white lg:pl-36" aria-labelledby="footer-heading">
+		<!-- <div class="mx-auto max-w-4xl px-6 py-16 sm:py-24 lg:px-8">
 		<h2 id="footer-heading" class="font-display text-4xl pb-4 font-bold">Book lists</h2>
 
 		<div class="xl:grid xl:grid-cols-2 xl:gap-8">
@@ -109,13 +109,14 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="max-w-4xl m-auto px-6 pt-8 pb-12 border-t border-slate-200">
-		<p class="mt-8 text-xs leading-5 text-slate-400 md:order-1 md:mt-0 float-left">
-			&copy; {new Date().getFullYear()} BookendsAI
-		</p>
-		<p class="mt-8 text-xs leading-5 text-slate-400 md:order-1 md:mt-0 float-right">
-			<a class="px-4 hover:underline" href="/affiliate-disclaimer">Affiliate Disclaimer</a>
-		</p>
-	</div>
-</footer> -->
+	</div> -->
+		<div class="max-w-4xl m-auto px-6 pt-8 pb-12 border-t border-slate-200">
+			<p class="mt-8 text-xs leading-5 text-slate-400 md:order-1 md:mt-0 float-left">
+				&copy; {new Date().getFullYear()} BookendsAI
+			</p>
+			<p class="mt-8 text-xs leading-5 text-slate-400 md:order-1 md:mt-0 float-right">
+				<a class="px-4 hover:underline" href="/affiliate-disclaimer">Affiliate Disclaimer</a>
+			</p>
+		</div>
+	</footer>
+</div>
