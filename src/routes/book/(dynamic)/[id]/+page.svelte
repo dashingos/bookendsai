@@ -59,7 +59,7 @@
 			<img
 				src={volumeInfo.imageLinks.thumbnail}
 				alt="{volumeInfo.title} Cover"
-				class="object-contain border border-slate-100 rounded m-4"
+				class="object-contain border border-slate-200 rounded m-4"
 			/>
 			<div class="ml-4">
 				<h1 class="font-bold text-3xl mb-1 font-display">{volumeInfo.title}</h1>
@@ -75,7 +75,7 @@
 								href={links[id].aff}
 								target="_blank"
 								rel="noreferrer"
-								class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 mr-2 inline-block"
+								class="font-display rounded-md bg-white py-2 px-3.5 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:ring-slate-300 whitespace-nowrap my-1 inline-block hover:bg-blue-100 hover:text-blue-900"
 								>Buy Book</a
 							>
 						{/if}
@@ -84,7 +84,7 @@
 								href={links[id].audible}
 								target="_blank"
 								rel="noreferrer"
-								class="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded whitespace-nowrap my-1 inline-block"
+								class="font-display rounded-md bg-white py-2 px-3.5 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:ring-slate-300 whitespace-nowrap my-1 inline-block hover:bg-blue-100 hover:text-blue-900"
 								>Buy Audiobook</a
 							>
 						{/if}
