@@ -46,7 +46,7 @@
 
 		const books = await searchBooksByTitle(title, 1);
 		volumeInfo = books[0].volumeInfo;
-
+		desc_length = books[0].volumeInfo.description.length;
 		loaded = true;
 	});
 </script>
@@ -95,7 +95,6 @@
 		<p class="text-slate-700">{volumeInfo.description}</p>
 	{/if}
 {/if}
-
 <section id="question" class="mt-12">
 	<h1 class="font-display text-xl font-extrabold text-slate-900 md:text-3xl mb-1">
 		Ask a question about the book
@@ -105,7 +104,9 @@
 	>
 		<input
 			on:keydown={async (e) => {
-				if (e.key == 'Enter') new_question();
+				if (e.key == 'Enter') {
+					new_question();
+				}
 			}}
 			bind:value={search}
 			placeholder={placeholder[place_i]}
