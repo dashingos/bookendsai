@@ -1,4 +1,5 @@
 export async function searchBooksByTitle(title, maxResults = 10) {
+	if (!title) title = 'Behave by Robert Sapolsky';
 	const baseUrl = 'https://www.googleapis.com/books/v1/volumes';
 	const params = {
 		q: `intitle:${title}`,
@@ -16,8 +17,7 @@ export async function searchBooksByTitle(title, maxResults = 10) {
 }
 
 export async function ask(update_result, book, question) {
-	let res = await fetch('https://bookendsai.com/api/ask', {
-		// let res = await fetch('http://localhost:8787/api/ask', {
+	let res = await fetch('/api/ask', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

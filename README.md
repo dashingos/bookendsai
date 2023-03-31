@@ -1,3 +1,13 @@
+# Bookends AI
+
+This is a SvelteKit Example of streaming a response from ChatGPT.
+
+## Shout out to [Cycle App](https://www.cycle.app/) for the button shadow CSS.
+
+## How it works
+
+Right now this is using [Google Books API](https://developers.google.com/books/docs/v1/using) to get the book information, which isn't the greatest, but it's easy to get started with and change out later.
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

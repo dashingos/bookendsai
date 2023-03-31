@@ -2,15 +2,13 @@
 	import Meta from '$lib/meta.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import { browser } from '$app/environment';
 	const { id } = $page.params;
 	import { searchBooksByTitle, ask } from '$lib/utils';
-	import { links } from '$lib/links';
 
 	const placeholder = ['What are the top 3 takeaways?'];
 	let place_i = 0;
 
-	let loaded = true;
+	let loaded = false;
 	let search;
 	let answering = false;
 
@@ -46,7 +44,6 @@
 
 		const books = await searchBooksByTitle(title, 1);
 		volumeInfo = books[0].volumeInfo;
-		desc_length = books[0].volumeInfo.description.length;
 		loaded = true;
 	});
 </script>
@@ -67,33 +64,26 @@
 					<p class="font-medium text-slate-900">{volumeInfo.subtitle}</p>
 				{/if}
 				<p class="text-sm text-slate-500">By {volumeInfo.authors[0]}</p>
-
-				{#if links[id]}
-					<p class="my-2">
-						{#if links[id].aff}
-							<a
-								href={links[id].aff}
-								target="_blank"
-								rel="noreferrer"
-								class="font-display rounded-md bg-white py-2 px-3.5 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:ring-slate-300 whitespace-nowrap my-1 inline-block hover:bg-blue-100 hover:text-blue-900"
-								>Buy Book</a
-							>
-						{/if}
-						{#if links[id].audible}
-							<a
-								href={links[id].audible}
-								target="_blank"
-								rel="noreferrer"
-								class="font-display rounded-md bg-white py-2 px-3.5 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:ring-slate-300 whitespace-nowrap my-1 inline-block hover:bg-blue-100 hover:text-blue-900"
-								>Buy Audiobook</a
-							>
-						{/if}
-					</p>
-				{/if}
 			</div>
 		</div>
 		<p class="text-slate-700">{volumeInfo.description}</p>
 	{/if}
+{:else}
+	<div class="py-32">
+		<svg
+			class="animate-spin m-auto h-5 w-5 text-slate-700"
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+		>
+			<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+			<path
+				class="opacity-75"
+				fill="currentColor"
+				d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+			/>
+		</svg>
+	</div>
 {/if}
 <section id="question" class="mt-12">
 	<h1 class="font-display text-xl font-extrabold text-slate-900 md:text-3xl mb-1">
@@ -165,17 +155,16 @@
 			</button>
 		{/if}
 	</div>
-</section>
-
-<section class="mt-12">
-	{#if qa.length > 0}
-		{#each qa as { q, a }}
-			<div class="mb-12">
-				<span class="text-xl font-display font-semibold">{@html q}</span>
-				{#if a}
-					<p class="leading-7 text-slate-600">{@html a}</p>
-				{/if}
-			</div>
-		{/each}
-	{/if}
+	<div class="mt-12">
+		{#if qa.length > 0}
+			{#each qa as { q, a }}
+				<div class="mb-12">
+					<span class="text-xl font-display font-semibold">{@html q}</span>
+					{#if a}
+						<p class="leading-7 text-slate-600">{@html a}</p>
+					{/if}
+				</div>
+			{/each}
+		{/if}
+	</div>
 </section>

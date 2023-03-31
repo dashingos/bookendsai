@@ -1,7 +1,7 @@
 <script>
 	import Meta from '$lib/meta.svelte';
 	import { searchBooksByTitle } from '$lib/utils';
-	const placeholder = ['Atomic Habits by James Clear'];
+	const placeholder = ['Behave by Robert Sapolsky'];
 	let place_i = 0;
 
 	let search = '';
